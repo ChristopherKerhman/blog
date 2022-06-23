@@ -31,7 +31,7 @@ Class GetArticles {
     FROM `articles`
     INNER JOIN `utilisateurs` ON `utilisateurs`.`id` = `articles`.`id_utilisateur`
     INNER JOIN `categories` ON `categories`.`id` = `articles`.`id_categorie`
-    ORDER BY `id_categorie`, `date` LIMIT 3";
+    ORDER BY `date` DESC LIMIT 3";
     $void = [];
     $readAllArticles = new RCUD($select, $void);
     return $readAllArticles->READ();
