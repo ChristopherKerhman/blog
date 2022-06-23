@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : jeu. 23 juin 2022 à 20:24
+-- Généré le : jeu. 23 juin 2022 à 20:39
 -- Version du serveur :  8.0.29-0ubuntu0.20.04.3
 -- Version de PHP : 7.4.3
 
@@ -30,17 +30,12 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `articles` (
   `id` int NOT NULL,
-  `titre` varchar(80) NOT NULL,
-  `article` text NOT NULL,
+  `titre` varchar(80) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
+  `article` text CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
   `id_utilisateur` int NOT NULL,
   `id_categorie` int NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Déchargement des données de la table `articles`
---
-
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -50,12 +45,17 @@ CREATE TABLE `articles` (
 
 CREATE TABLE `categories` (
   `id` int NOT NULL,
-  `nom` varchar(80) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `nom` varchar(80) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `categories`
 --
+
+INSERT INTO `categories` (`id`, `nom`) VALUES
+(1, 'Lorem Ipsum'),
+(2, 'Chocolat'),
+(3, 'Vanille Bourbon');
 
 -- --------------------------------------------------------
 
@@ -65,15 +65,12 @@ CREATE TABLE `categories` (
 
 CREATE TABLE `commentaires` (
   `id` int NOT NULL,
-  `commentaire` varchar(1024) NOT NULL,
+  `commentaire` varchar(1024) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
   `id_article` int NOT NULL,
   `id_utilisateur` int NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
-
-
--- --------------------------------------------------------
 
 --
 -- Structure de la table `droits`
@@ -81,8 +78,8 @@ CREATE TABLE `commentaires` (
 
 CREATE TABLE `droits` (
   `Id` int NOT NULL,
-  `nom` varchar(80) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `nom` varchar(80) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `droits`
@@ -101,17 +98,19 @@ INSERT INTO `droits` (`Id`, `nom`) VALUES
 
 CREATE TABLE `utilisateurs` (
   `id` int NOT NULL,
-  `login` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `login` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
   `id_droits` int NOT NULL DEFAULT '1',
-  `token` varchar(16) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `token` varchar(16) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `utilisateurs`
 --
 
+INSERT INTO `utilisateurs` (`id`, `login`, `password`, `email`, `id_droits`, `token`) VALUES
+(7, 'Gandalf', '$2y$10$lnuLRgTmavdlwUdtphtkj.Q.TDcVCXAvgO6.y24H3wVMnv6YHYvHW', 'christophe.calmes22@gmail.com', 1337, 'UAhfMTssDL6Y4o');
 
 --
 -- Index pour les tables déchargées
