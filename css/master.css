@@ -1,0 +1,113 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;700&family=VT323&display=swap');
+/*
+Reference couleur et fonts
+  font-family: 'VT323', monospace;
+    font-family: 'Inconsolata', monospace;
+
+*/
+/*Presentation générale*/
+body {
+  background-color: #C1D1C9;
+  color : #121D17;
+  font-family: 'Inconsolata', monospace;
+  font-weight: 300;
+}
+h1, h2 {
+  font-family: 'Inconsolata', monospace;
+    font-weight: 700;
+}
+.titre {
+  text-align: center;
+  font-size: 2em;
+  font-style: normal;
+}
+footer, header, main {
+    text-align: center;
+    margin-top: 2em;
+}
+
+/*Présentation Navigation*/
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.lienNav {
+  background-color: #829087;
+  margin-top: 1em;
+  font-family: 'VT323', monospace;
+  font-size: 1.5em;
+  border-radius: 5px;
+  text-decoration: none;
+  color : #121D17;
+  padding: 5px 10px 5px 10px;
+  border: 1px solid black;
+  margin-right: 0.25em;
+}
+.lienNav:hover {
+  background-color: #135913;
+  color: white;
+  transition: background-color 0.45s, color 0.45s;
+}
+.NavBasDroite {
+  display: flex;
+  justify-content: flex-end;
+}
+/*Presentation formulaire*/
+label, input, select {
+  font-size: 1.2em;
+  margin-top: 0.5em;
+}
+input, select {
+    background-color: #EEF5EE;
+}
+.formulaire {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.buttonForm {
+  background-color: #829087;
+  margin-top: 1em;
+  margin-right: 0.25em;
+  font-family: 'VT323', monospace;
+  font-size: 1.5em;
+  border-radius: 5px;
+  border: 1px solid black;
+  text-decoration: none;
+  color : #121D17;
+  padding: 5px 10px 5px 10px;
+}
+.buttonForm:hover{
+  background-color: #135913;
+  color: white;
+  transition: background-color 0.35s, color 0.35s;
+}
+/*Profil box*/
+.profilBox {
+  border: 2px black solid;
+  border-radius: 5px;
+  text-align: left;
+  width:max-content;
+  padding: 0.9em;
+  margin-right: 1em;
+  margin-bottom: 0.25em;
+}
+ul {
+  list-style: none;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+/*Tableau Administrateur*/
+.tableau{
+  text-align: left;
+
+}
