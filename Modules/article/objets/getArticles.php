@@ -26,4 +26,14 @@ Class GetArticles {
     $readUnArticle = new RCUD($select, $param);
     return $readUnArticle->READ();
   }
+  public function troisArticles(){
+    $select = "SELECT `articles`.`id`, `titre`, `article`, `id_utilisateur`, `id_categorie`, `date`, `nom`, `login`
+    FROM `articles`
+    INNER JOIN `utilisateurs` ON `utilisateurs`.`id` = `articles`.`id_utilisateur`
+    INNER JOIN `categories` ON `categories`.`id` = `articles`.`id_categorie`
+    ORDER BY `id_categorie`, `date` LIMIT 3";
+    $void = [];
+    $readAllArticles = new RCUD($select, $void);
+    return $readAllArticles->READ();
+  }
 }

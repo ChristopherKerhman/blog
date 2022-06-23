@@ -63,6 +63,14 @@ Class PrintArticles extends GetArticles {
       </article>
       <p class="left"><strong>Auteur : '.$data[0]['login'].' le '.brassageDate($data[0]['date']).'</strong></p>
       ';
-
+  }
+  public function troisArticlesComplet($variable) {
+    foreach ($variable as $key => $value) {
+      echo '<article>
+        <h3 class="titre">'.$value['titre'].'</h3>
+        '.$value['article'].'
+        </article>
+        <p class="left"><strong>Auteur : '.$value['login'].' le '.brassageDate($value['date']).'</strong></p>';
+    }
   }
 }
