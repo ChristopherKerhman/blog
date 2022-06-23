@@ -39,6 +39,9 @@ Class Navigation {
       ['route'=>'Modules/article/CUD/Create/newArticle.php','securite'=>1337],
       ['route'=>'Modules/administration/CUD/Update/modArticle.php','securite'=>1337],
       ['route'=>'Modules/administration/CUD/Delete/DeleteArticle.php','securite'=>1337],
+      ['route'=>'Modules/commentaires/CUD/Create/commentaire.php','securite'=>1],
+      ['route'=>'Modules/commentaires/CUD/Create/commentaire.php','securite'=>42],
+      ['route'=>'Modules/commentaires/CUD/Create/commentaire.php','securite'=>1337],
       ];
   }
 

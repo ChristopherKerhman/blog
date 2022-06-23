@@ -116,3 +116,9 @@ ul {
   text-align: left;
   font-size: 1.2em;
 }
+/*Commentaires*/
+.commentaires {
+  padding: 1em;
+  text-align: justify;
+  max-width: 90%;
+}
