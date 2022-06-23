@@ -21,7 +21,8 @@ Class Navigation {
       ['cheminNav'=>'Modules/article/allArticle.php', 'nom'=>'Tous les articles', 'droit'=>1, 'bas'=>1],
       ['cheminNav'=>'Modules/article/allArticle.php', 'nom'=>'Tous les articles', 'droit'=>42, 'bas'=>1],
       ['cheminNav'=>'Modules/article/allArticle.php', 'nom'=>'Tous les articles', 'droit'=>1337, 'bas'=>1],
-      ['cheminNav'=>'Modules/administration/modifierArticle.php', 'nom'=>'Modifier Article', 'droit'=>1337, 'bas'=>2],];
+      ['cheminNav'=>'Modules/administration/modifierArticle.php', 'nom'=>'Modifier Article', 'droit'=>1337, 'bas'=>2],
+      ['cheminNav'=>'Modules/article/article.php', 'nom'=>'One Article', 'droit'=>0, 'bas'=>2],];
 
     $this->routeForm = [
       ['route'=>'Modules/utilisateur/CUD/Create/createUser.php', 'securite'=>0],

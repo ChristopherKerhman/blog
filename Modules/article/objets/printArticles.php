@@ -52,8 +52,17 @@ Class PrintArticles extends GetArticles {
   public function affichageArticlePagination($variable) {
     echo '<ul>';
     foreach ($variable as $key => $value) {
-      echo '<li class="profilBox"><a class="lienNav" href="index.php?idNav=6&id='.$value['id'].'">Afficher</a> Auteur : '.$value['login'].' | titre article '.$value['titre'].' | catégorie '.$value['nom'].' | date '.brassageDate($value['date']).'</li>';
+      echo '<li class="profilBox"><a class="lienNav" href="index.php?idNav=17&id='.$value['id'].'">Afficher</a> Auteur : '.$value['login'].' | titre article '.$value['titre'].' | catégorie '.$value['nom'].' | date '.brassageDate($value['date']).'</li>';
     }
     echo '</ul>';
+  }
+  public function AfficherUnArticle ($data) {
+    echo '<article>
+      <h3 class="titre">'.$data[0]['titre'].'</h3>
+      '.$data[0]['article'].'
+      </article>
+      <p class="left"><strong>Auteur : '.$data[0]['login'].' le '.brassageDate($data[0]['date']).'</strong></p>
+      ';
+
   }
 }
