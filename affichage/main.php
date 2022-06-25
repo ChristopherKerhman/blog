@@ -21,7 +21,8 @@
         include $chemin;
     }
   } else {
-    $idNav = 0;
+    //$idNav = 0;
+    include 'Modules/pageIndex.php';
   }
 ?>
 </main>
