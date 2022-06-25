@@ -121,3 +121,36 @@ ul {
   text-align: justify;
   max-width: 90%;
 }
+@media only screen and (max-width: 500px) {
+  /*Portrait*/
+  body {
+      width: revert;
+    }
+    nav ul {
+      display: flex;
+      flex-direction: column;
+    }
+    nav ul li {
+      margin-bottom: 1em;
+    }
+    footer {
+      display: flex;
+      flex-direction: column;
+    }
+.profilBox  {
+      width: 90%;
+    }
+  .profilBox a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0.5em;
+  }
+  .flex-row {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 950px) {
+  /*Paysage*/
+
+}

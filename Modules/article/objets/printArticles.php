@@ -12,9 +12,10 @@ Class PrintArticles extends GetArticles {
     echo'</ul>';
     }
   }
-  public function selectCategorie($variable) {
+  public function selectCategorie($variable, $search) {
     echo '<lable for="id_categorie">Catégorie de votre article ?</lable>';
     echo '<select id="id_categorie" name="id_categorie">';
+      if($search == 1) {echo '<option value="0" selected>Toutes</option>';}
       foreach ($variable as $key => $value) {
         echo '<option value="'.$value['id'].'">'.$value['nom'].'</option>';
       }

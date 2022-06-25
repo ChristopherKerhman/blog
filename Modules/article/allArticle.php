@@ -8,7 +8,7 @@
 <form class="formulaire" id="messagePrint"  action="<?php filter($_SERVER["PHP_SELF"]); ?>" method="post">
   <?php
     $dataCat = $allArticles->getCataegoriesArticles();
-    $allArticles->selectCategorie($dataCat);
+    $allArticles->selectCategorie($dataCat, 1);
    ?>
   <button class="buttonForm" type="submit" name="button">Tri ?</button>
 </form>
@@ -27,7 +27,7 @@ $currentPage = 1;
 }
 $parPage = 5;
   echo '<h3 class="titre">Tous les articles | page : '.$currentPage.'</h3>';
-  if(isset(  $_SESSION['tri'])) {
+  if((isset($_SESSION['tri']))&&($_SESSION['tri'] != 0)) {
     $count = "SELECT COUNT(`id`) AS `nbr` FROM `articles` WHERE `id_categorie` = {$_SESSION['tri']}";
   } else {
     $count = "SELECT COUNT(`id`) AS `nbr` FROM `articles`";
@@ -39,7 +39,8 @@ $nbr = $countArticles->READ();
 $nbrArticles = $nbr[0]['nbr'];
 $pages = ceil($nbrArticles/$parPage);
 $premier = ($currentPage * $parPage) - $parPage;
-if(isset(  $_SESSION['tri'])) {
+
+if ((isset($_SESSION['tri']))&&($_SESSION['tri'] != 0)) {
   $select = "SELECT `articles`.`id`, `titre`, `article`, `id_utilisateur`, `id_categorie`, `date`, `login`, `nom`
   FROM `articles`
   INNER JOIN `categories`ON `categories`.`id` = `articles`.`id_categorie`

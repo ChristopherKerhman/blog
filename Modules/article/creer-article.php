@@ -24,7 +24,7 @@ if($_SESSION['role'] == 1337) {
   <label for="article">Votre article :</label>
   <textarea id="article" name="article" rows="8" cols="80" required>
   </textarea>
-  <?php $dataCategorie->selectCategorie($categories); ?>
+  <?php $dataCategorie->selectCategorie($categories, 0); ?>
   <button class="buttonForm" type="submit" name="idNav" value="6">Publier</button>
 </form>
 
